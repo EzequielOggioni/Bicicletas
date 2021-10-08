@@ -1,6 +1,17 @@
 <div class="row">
-<div class="col-3" *ngFor="let producto of productos">
-    <app-producto [producto]="producto"></app-producto>
-
+    <button class="col-2" mat-fab color="warn" (click)="nuevoProducto()" aria-label="Nuevo producto">
+        <mat-icon>home</mat-icon>
+      </button>
+    <mat-label class="col-2 offset-4">Buscar</mat-label>
+    <input class="col-4" matInput type="text" [(ngModel)]="miFltro" >
 </div>
+<div class="row">
+    <app-modificar-producto (ProductoGuardado)="agregar()" *ngIf="nuevo" ></app-modificar-producto>
+</div>
+<div class="row">
+    <div class="col-3" *ngFor="let producto of productos | filtroProducto:miFltro , filtroStock">
+        <app-producto (EliminarProducto)="quitarDeLista($event)" [producto]="producto"></app-producto>
+
+    </div>
+
 </div>
