@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Producto } from 'src/app/clase/producto';
 import { ProductoService } from 'src/app/helper/producto.service';
 
@@ -10,11 +10,17 @@ import { ProductoService } from 'src/app/helper/producto.service';
 export class ModificarProductoComponent implements OnInit {
 
   producto!: Producto;
-  constructor(private servicio:ProductoService) {
-    
+  @Output() ProductoGuardado = new EventEmitter();
+
+  constructor(private servicio: ProductoService) {
+
   }
   ngOnInit(): void {
     this.producto = this.servicio.productoAEditar;
+  }
+
+  Guardar() {
+    this.ProductoGuardado.emit();
   }
 
 }

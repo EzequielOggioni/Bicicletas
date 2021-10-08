@@ -1,7 +1,8 @@
 <div *ngIf="producto">
-<input type="text" [(ngModel)]="producto.nombre">
-<input type="text" [(ngModel)]="producto.descripcion">
-<input type="text" [(ngModel)]="producto.path">
-<img [src]="producto.path">
-
+    <input type="text" [(ngModel)]="producto.nombre">
+    <input type="text" [(ngModel)]="producto.descripcion">
+    <input type="text" [(ngModel)]="producto.path">
+    <img [src]="producto.path">
+    <input type="button" (click)="Guardar()" value="Guardar">
+    <a routerLink="../categorias">volver</a>
 </div>

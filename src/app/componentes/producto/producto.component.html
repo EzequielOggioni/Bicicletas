@@ -1,5 +1,17 @@
-<h3>{{producto.nombre}}</h3>
-<img [src]="producto.path" class="img-fluid">
-<p>{{producto.descripcion}}</p>
-<input type="button" value="Agregar"  > 
-<input type="button" value="Moduficar" (click)="mover()"  > 
+<div class="row">
+    <h3>{{producto.nombre}}</h3>
+</div>
+<div class="row">
+    <div class="col-8 offset-2">
+        <img [src]="producto.path" class="img-fluid">
+    </div>
+</div>
+<div class="row">
+
+    <p>{{producto.descripcion}}</p>
+</div>
+<div class="row">
+
+    <input class="col-6" type="button" value="Eliminar" (click)="eliminar()">
+    <input class="col-6" type="button" value="Modificar" (click)="modificar()">
+</div>

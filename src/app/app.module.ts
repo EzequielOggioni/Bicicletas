@@ -17,6 +17,8 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { ListaComponent } from './componentes/lista/lista.component';
 import { CategoriaComponent } from './componentes/categoria/categoria.component';
 import { ModificarProductoComponent } from './componentes/modificar-producto/modificar-producto.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FiltroProductoPipe } from './filtro-producto.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ModificarProductoComponent } from './componentes/modificar-producto/mod
     ProductoComponent,
     ListaComponent,
     CategoriaComponent,
-    ModificarProductoComponent
+    ModificarProductoComponent,
+    FiltroProductoPipe
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { ModificarProductoComponent } from './componentes/modificar-producto/mod
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

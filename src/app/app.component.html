@@ -1,2 +1,6 @@
-
-<router-outlet></router-outlet>
+<div [ngClass]="{black:blackMode}">
+    <div class="row">
+        <mat-slide-toggle [(ngModel)]="blackMode">Modo Nocturno</mat-slide-toggle>
+    </div>
+    <router-outlet></router-outlet>
+</div>
